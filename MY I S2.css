@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #0b0b16;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 1.5s ease;
+    z-index: 10;
+}
+
+.overlay.fade {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.texto {
+    text-align: center;
+    animation: fadeIn 2s ease;
+}
+
+.texto h1 {
+    font-size: 3em;
+    font-weight: 300;
+}
+
+.texto p {
+    margin-top: 15px;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.texto span {
+    display: block;
+    margin-top: 40px;
+    font-size: 0.9em;
+    opacity: 0.5;
+}
+
+#conteudo {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+#conteudo.mostrar {
+    opacity: 1;
+}
+
+#conteudo h2 {
+    font-weight: 300;
+    font-size: 2.5em;
+}
+
+#conteudo p {
+    margin-top: 20px;
+    max-width: 500px;
+    font-size: 1.2em;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
